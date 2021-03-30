@@ -1,2 +1,2 @@
 # TechProg
-*** This is project with ITIP 4 semestr homeworks
+## This is project with ITIP 4 semestr homeworks
