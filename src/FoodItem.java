@@ -2,13 +2,30 @@ import java.util.Date;
 
 public class FoodItem extends GenericItem{
     public Date dateOfIncome;
-
+    public FoodItem analog;
     public short expires;
-
+/*
     public FoodItem(int itemId, String itemName, float itemPrice, Date date, short exp) {
         super(itemId, itemName, itemPrice);
         this.dateOfIncome = date;
         this.expires = exp;
+    }
+ */
+
+    public FoodItem(String name, float price, FoodItem analog, Date date, short expires){
+        this(name, price, expires);
+        this.analog = analog;
+        this.dateOfIncome = date;
+    }
+
+    public FoodItem(String name, float price, short expires) {
+        this(name);
+        this.price = price;
+        this.expires = expires;
+    }
+
+    public FoodItem(String name){
+        this.name = name;
     }
 
     @Override
@@ -29,7 +46,7 @@ public class FoodItem extends GenericItem{
 
     @Override
     public Object clone(){
-        FoodItem obj = new FoodItem(this.ID, this.name, this.price, this.dateOfIncome, this.expires);
+        FoodItem obj = new FoodItem(this.name, this.price, this.analog, this.dateOfIncome, this.expires);
         return obj;
     }
 

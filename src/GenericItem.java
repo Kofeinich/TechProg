@@ -7,6 +7,7 @@ public class GenericItem {
     public int ID;
     public String name;
     public float price;
+    static int currentID;
     Category category = Category.GENERAL;
 
     public enum Category{FOOD, PRINT, DRESS, GENERAL}
@@ -17,8 +18,20 @@ public class GenericItem {
         category = newCategory;
     }
 
+    public GenericItem(String name, float price, Category category){
+
+    }
+
+    public GenericItem(String name, float price, GenericItem analog){
+
+    }
+
+    public GenericItem(){
+
+    }
+
     public GenericItem(int itemId, String itemName, float itemPrice){
-        this.ID = itemId;
+        this.ID = GenericItem.currentID++;
         this.name = itemName;
         this.price = itemPrice;
     }

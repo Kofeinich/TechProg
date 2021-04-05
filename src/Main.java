@@ -10,8 +10,9 @@ public class Main {
         Item2.printAll();
         Item3.printAll();
         Date date = new Date(); Date date2 = new Date();
-        FoodItem Food2 = new FoodItem(6,"Burger", 321, date, (short) 5);
-        FoodItem Food1 = new FoodItem(4,"Pizza", 654, date, (short) 34);
+        FoodItem Food = new FoodItem("Humus");
+        FoodItem Food2 = new FoodItem("Burger", 8, Food, date, (short) 5 );
+        FoodItem Food1 = new FoodItem("Pizza", 654, Food, date, (short) 34);
         TechicalItem Tech1 = new TechicalItem(5, "Branch", 880, (short) 180);
         GenericItem[] mas = {Food1, Tech1};
         for (GenericItem obj : mas) {
