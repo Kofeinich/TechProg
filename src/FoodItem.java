@@ -28,6 +28,12 @@ public class FoodItem extends GenericItem{
         this.name = name;
     }
 
+    public FoodItem(String[] mySpliter) {
+        this.name = mySpliter[0];
+        this.price = Float.parseFloat(mySpliter[1]);
+        this.expires = Short.parseShort(mySpliter[2]);
+    }
+
     @Override
     void printAll() {
         super.printAll();
