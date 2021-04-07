@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.stream.IntStream;
 
-public class U0901Main {
+public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
         GenericItem Item1 = new GenericItem(1, "Tomato", 129);
         GenericItem Item2 = new GenericItem(2, "Korn", 69);
