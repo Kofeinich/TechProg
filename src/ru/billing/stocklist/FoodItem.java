@@ -1,16 +1,35 @@
+package ru.billing.stocklist;
+
 import java.util.Date;
 
-public class FoodItem extends GenericItem{
-    public Date dateOfIncome;
-    public FoodItem analog;
-    public short expires;
-/*
-    public FoodItem(int itemId, String itemName, float itemPrice, Date date, short exp) {
-        super(itemId, itemName, itemPrice);
-        this.dateOfIncome = date;
-        this.expires = exp;
+public final class FoodItem extends GenericItem {
+    private Date dateOfIncome;
+    private FoodItem analog;
+    private short expires;
+
+    public Date getDateOfIncome() {
+        return dateOfIncome;
     }
- */
+
+    public FoodItem getAnalog() {
+        return analog;
+    }
+
+    public short getExpires() {
+        return expires;
+    }
+
+    public void setDateOfIncome(Date dateOfIncome) {
+        this.dateOfIncome = dateOfIncome;
+    }
+
+    public void setAnalog(FoodItem analog) {
+        this.analog = analog;
+    }
+
+    public void setExpires(short expires) {
+        this.expires = expires;
+    }
 
     public FoodItem(String name, float price, FoodItem analog, Date date, short expires){
         this(name, price, expires);
@@ -58,6 +77,6 @@ public class FoodItem extends GenericItem{
 
     @Override
     public String toString( ){
-        return "FoodItem [ID=" +this.ID + ", Name=" + this.name + ", price=" + this.price + ", category=" + this.category  + ", date=" + this.dateOfIncome + ", expires=" + this.expires + "]";
+        return "ru.billing.stocklist.FoodItem [ID=" +this.ID + ", Name=" + this.name + ", price=" + this.price + ", category=" + this.category  + ", date=" + this.dateOfIncome + ", expires=" + this.expires + "]";
     }
 }

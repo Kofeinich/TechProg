@@ -1,6 +1,16 @@
-public class TechicalItem extends GenericItem{
-    short warrantyTime;
+package ru.billing.stocklist;
 
+public final class TechicalItem extends GenericItem {
+
+    private short warrantyTime;
+
+    public short getWarrantyTime() {
+        return warrantyTime;
+    }
+
+    public void setWarrantyTime(short warrantyTime) {
+        this.warrantyTime = warrantyTime;
+    }
     public TechicalItem(int itemId, String itemName, float itemPrice, short wTime) {
         super(itemId, itemName, itemPrice);
         this.warrantyTime = wTime;
@@ -31,7 +41,6 @@ public class TechicalItem extends GenericItem{
 
     @Override
     public String toString( ){
-        return "TechicalItem [ID=" +this.ID + ", Name=" + this.name + ", price=" + this.price + ", category=" + this.category + ", warranty=" + this.warrantyTime + "]";
+        return "ru.billing.stocklist.TechicalItem [ID=" +this.ID + ", Name=" + this.name + ", price=" + this.price + ", category=" + this.category + ", warranty=" + this.warrantyTime + "]";
     }
-
 }
