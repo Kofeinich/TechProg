@@ -7,7 +7,7 @@ public class GenericItem {
     public int ID;
     public String name;
     public float price;
-    Category category = Category.GENERAL;
+    static Category category = Category.GENERAL;
 
     public enum Category{FOOD, PRINT, DRESS, GENERAL}
 
