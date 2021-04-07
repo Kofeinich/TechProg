@@ -1,8 +1,11 @@
 package ru.billing.stocklist;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.stream.IntStream;
+
+import ru.billing.stocklist.GenericItem;
 
 public class ItemCatalog {
     private HashMap<Integer, GenericItem> catalog =
