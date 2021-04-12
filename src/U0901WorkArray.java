@@ -20,8 +20,7 @@ public final class U0901WorkArray <T extends Number> {
     public double sum(){
         double doubleWork = 0;
         for (T arrNum : getArrNums()) {
-            String arNum = arrNum.toString();
-            doubleWork = doubleWork + Double.valueOf(arNum);
+            doubleWork = doubleWork + arrNum.doubleValue();
         }
         return doubleWork;
     }
