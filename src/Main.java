@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Date;
 import java.util.stream.IntStream;
 
@@ -8,13 +7,14 @@ public class Main {
         GenericItem Item2 = new GenericItem(2, "Korn", 69);
         GenericItem Item3 = new GenericItem(3, "Hat", 1678);
         Item1.setCategory(GenericItem.Category.FOOD);
-        Date date = new Date(); Date date2 = new Date();
+        Date date = new Date();
+        Date date2 = new Date();
         FoodItem Food = new FoodItem("Humus");
-        FoodItem Food2 = new FoodItem("Burger", 8, Food, date, (short) 5 );
+        FoodItem Food2 = new FoodItem("Burger", 8, Food, date, (short) 5);
         FoodItem Food1 = new FoodItem("Pizza", 654, Food, date, (short) 34);
         TechicalItem Tech1 = new TechicalItem(5, "Branch", 880, (short) 180);
 
-        Integer intArr[]={10,20,15};
+        Integer intArr[] = {10, 20, 15};
         Float[] floatArr = new Float[10];
         IntStream.range(0, floatArr.length).forEachOrdered(i -> {
             floatArr[i] = ((float) (Math.random() * 100) - 10);
@@ -27,9 +27,13 @@ public class Main {
         System.out.printf("Double sum is: %s \n", insWorkArrayFloat.sum());
 
         String line = "Конфеты ’Маска’;45;120";
-        String[] item_fld = new String[0];
-        Spliter Split = new Spliter(line, item_fld);
-        FoodItem FoodTest = new FoodItem(Split.mySpliter());
-        FoodTest.printAll();
+        Splitter Split = new Splitter(line);
+        try {
+            var FoodTest = new FoodItem();
+            FoodTest.buildItem(Split.parse());
+            FoodTest.printAll();
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
     }
 }

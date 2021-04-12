@@ -18,6 +18,14 @@ public class GenericItem {
         category = newCategory;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
     public GenericItem(String name, float price, Category category){
 
     }

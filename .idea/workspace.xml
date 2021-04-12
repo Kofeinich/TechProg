@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f52d5bdf-9bac-4ad9-8256-e82fb47ce545" name="Default Changelist" comment="feat: imports">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f52d5bdf-9bac-4ad9-8256-e82fb47ce545" name="Default Changelist" comment="fix: changes">
+      <change afterPath="$PROJECT_DIR$/src/Splitter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/U0901WorkArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/U0901WorkArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FoodItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FoodItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GenericItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenericItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spliter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617793478018</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: changes">
+      <created>1618217503665</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618217503665</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +104,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: .idea" />
     <MESSAGE value="feat: static" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: static" />
+    <MESSAGE value="fix: changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: changes" />
   </component>
 </project>

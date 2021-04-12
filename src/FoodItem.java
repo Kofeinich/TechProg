@@ -28,11 +28,7 @@ public class FoodItem extends GenericItem{
         this.name = name;
     }
 
-    public FoodItem(String[] mySpliter) {
-        this.name = mySpliter[0];
-        this.price = Float.parseFloat(mySpliter[1]);
-        this.expires = Short.parseShort(mySpliter[2]);
-    }
+    public FoodItem(){}
 
     @Override
     void printAll() {
@@ -59,5 +55,17 @@ public class FoodItem extends GenericItem{
     @Override
     public String toString( ){
         return "FoodItem [ID=" +this.ID + ", Name=" + this.name + ", price=" + this.price + ", category=" + this.category  + ", date=" + this.dateOfIncome + ", expires=" + this.expires + "]";
+    }
+
+    public void setExpires(short expires) {
+        this.expires = expires;
+    }
+
+    public void buildItem(String[] splitter) throws NumberFormatException {
+        if (splitter.length >= 3) {
+            setName(splitter[0]);
+            setPrice(Float.parseFloat(splitter[1]));
+            setExpires(Short.parseShort(splitter[2]));
+        }
     }
 }
