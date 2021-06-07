@@ -1,14 +1,4 @@
 package ru.billing.tunes.util;
-
-/*
- * This code is sample code, provided as-is, and we make no
- * warranties as to its correctness or suitablity for
- * any purpose.
- *
- * We hope that it's useful to you.  Enjoy.
- * Copyright 2004-8 LearningPatterns Inc.
- */
-
 import java.util.Date;
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -19,7 +9,6 @@ public class MusicItem
 {
     private static final long serialVersionUID = 1L;
 
-    // properties
     private Long       id;
     private String     title;
     private String     artist;
@@ -88,7 +77,6 @@ public class MusicItem
     public void setListPrice(BigDecimal listPriceIn) { listPrice = listPriceIn; }
     public void setPrice(BigDecimal priceIn) { price = priceIn; }
 
-    // override Object.equals
     public boolean equals(Object compare)
     {
         boolean result = false;
@@ -96,10 +84,8 @@ public class MusicItem
 
         if (compare instanceof MusicItem)
         {
-            // cast to MusicItem
             other = (MusicItem) compare;
 
-            // if all the fields are equal, the objects are equal
             result = other.getId().equals(this.getId()) &&
                     other.getTitle().equals(this.getTitle()) &&
                     other.getArtist().equals(this.getArtist()) &&
@@ -110,7 +96,6 @@ public class MusicItem
         return result;
     }
 
-    // override Object.toString
     public String toString()
     {
         return this.getClass().getName() +

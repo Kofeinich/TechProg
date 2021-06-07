@@ -13,22 +13,20 @@ public class ItemDAO
         m_conn = conn;
     }
 
-
     public MusicItem searchById(Long id) throws SQLException {
         MusicItem result = null;
         Statement stmt = null;
-        String sql = String.format("SELECT * FROM GUEST.ITEM WHERE ITEM_ID = %d", id);
-
+        String sql = String.format("SELECT * FROM APP.ITEM WHERE ITEM_ID = %d", id);
         try
         {
             stmt = m_conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            if (rs.next()) {
-                String title = rs.getString("TITLE");
-                String artist = rs.getString("ARTIST");
-                Date releaseDate = rs.getDate("RELEASEDATE");
-                BigDecimal listPrice = rs.getBigDecimal("LISTPRICE");
-                BigDecimal price = rs.getBigDecimal("PRICE");
+            ResultSet reSet = stmt.executeQuery(sql);
+            if (reSet.next()) {
+                String title = reSet.getString("TITLE");
+                String artist = reSet.getString("ARTIST");
+                Date releaseDate = reSet.getDate("RELEASEDATE");
+                BigDecimal listPrice = reSet.getBigDecimal("LISTPRICE");
+                BigDecimal price = reSet.getBigDecimal("PRICE");
                 result = new MusicItem(id, title, artist, releaseDate, listPrice, price);
             }
         }
@@ -45,14 +43,14 @@ public class ItemDAO
         String wildcarded = "%" + keyword + "%";
         String sql = "SELECT * FROM GUEST.ITEM WHERE TITLE LIKE ?";
         PreparedStatement pstmt = m_conn.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
-        while (rs.next()) {
-            long id = rs.getLong("ITEM_ID");
-            String title = rs.getString("TITLE");
-            String artist = rs.getString("ARTIST");
-            Date releaseDate = rs.getDate("RELEASEDATE");
-            BigDecimal listPrice = rs.getBigDecimal("LISTPRICE");
-            BigDecimal price = rs.getBigDecimal("PRICE");
+        ResultSet reSet = pstmt.executeQuery();
+        while (reSet.next()) {
+            long id = reSet.getLong("ITEM_ID");
+            String title = reSet.getString("TITLE");
+            String artist = reSet.getString("ARTIST");
+            Date releaseDate = reSet.getDate("RELEASEDATE");
+            BigDecimal listPrice = reSet.getBigDecimal("LISTPRICE");
+            BigDecimal price = reSet.getBigDecimal("PRICE");
             MusicItem ItemValue = new MusicItem(id, title, artist, releaseDate, listPrice, price);
             result.add(ItemValue);
         }
@@ -63,7 +61,7 @@ public class ItemDAO
             throws SQLException
     {
         java.sql.Date releaseDate = new java.sql.Date(item.getReleaseDate().getTime());
-        String sql = "INSERT INTO GUEST.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION)" + " VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO APP.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION)" + "VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement stmt = m_conn.prepareStatement(sql);
         stmt.setString(1, item.getTitle());
         stmt.setString(2, item.getArtist());

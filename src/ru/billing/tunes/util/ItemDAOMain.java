@@ -2,7 +2,6 @@ package ru.billing.tunes.util;
 
 import java.math.BigDecimal;
 import java.sql.*;
-import java.util.Collection;
 import java.util.Date;
 
 
@@ -11,24 +10,25 @@ public class ItemDAOMain {
         MusicItem musicItem = null;
         Connection conn = null;
         Class.forName("org.apache.derby.jdbc.ClientDriver");
-        conn = DriverManager.getConnection("jdbc:derby://localhost:1527/JavaTunesDB", "GUEST", "1234");
+        conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MyDbTest;create=true;", "Guest", "1234");
+        DatabaseMetaData dbmd = conn.getMetaData();
+        System.out.println(dbmd.getDriverName());
+        System.out.println(dbmd.getUserName());
         ItemDAO itemDAO = new ItemDAO(conn);
-
-        System.out.println("ID 1:");
         musicItem = itemDAO.searchById(1L);
         if (musicItem != null) {
             System.out.println(musicItem.toString());
         } else {
             System.out.println("not found");
         }
-        System.out.println("ID 100:");
+        System.out.println("ID 40:");
         musicItem = itemDAO.searchById(100L);
         if (musicItem != null) {
             System.out.println(musicItem.toString());
         } else {
             System.out.println("not found");
         }
-
+/*
         System.out.println("result of searching \"of\":");
         Collection<MusicItem> result2 = itemDAO.searchByKeyword("of");
         if (result2 != null) {
@@ -46,8 +46,8 @@ public class ItemDAOMain {
                 System.out.println(item.toString());
             }
         }
-
-        musicItem = new MusicItem(30L, "blabla", "joy division", new Date(), new BigDecimal("10.13"), new BigDecimal("10.745"));
+        */
+        musicItem = new MusicItem(22L, "Greatest", "Guns N Roses", new Date(), new BigDecimal("13.6"), new BigDecimal("19.54"));
         itemDAO.create(musicItem);
         conn.close();
     }
