@@ -1,4 +1,4 @@
-package ru.billing.client;
+package ru.billing.tunes.util;
 import ru.billing.stocklist.*;
 
 import java.sql.Connection;
