@@ -14,6 +14,8 @@ public class U901Thread extends Thread {
 
     public void run() {
         try {
+            Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+            System.out.println(Thread.currentThread().getName());
             bankWork.calc(intTrans, lngSleep);
         } catch (InterruptedException e) {
             e.printStackTrace();

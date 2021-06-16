@@ -1,8 +1,12 @@
 package ru.sync;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class U901Bank {
     public int intTo;
     public int intFrom = 220;
+    //public AtomicInteger intTo;
+    //public AtomicInteger intFrom = 220;
 
     public synchronized void calc(int intTransaction, long lngTimeout) throws InterruptedException {
         System.out.println("Before: " + Thread.currentThread().getName() + " current intTo:" + intTo + ", current intFrom:" + intFrom);
@@ -10,7 +14,7 @@ public class U901Bank {
         try {
             Thread.sleep(lngTimeout);
         } catch (InterruptedException e) {
-            System.out.println("I was interrupted!");
+            System.out.println("Interrupted!" + e.getMessage());
             e.printStackTrace();
         }
         intTo += intTransaction;

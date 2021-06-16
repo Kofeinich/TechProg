@@ -3,6 +3,7 @@ import ru.billing.stocklist.*;
 import ru.exception.ItemAlreadyExistsException;
 import ru.exception.CatalogLoadException;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class CatalogFileLoader implements CatalogLoader{
         String line;
         try {
             fis = new InputStreamReader(new FileInputStream(fileName), "Windows-1251");
+            //fis = new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8);
             Scanner s = new Scanner(fis);
 
             while(s.hasNextLine()){
